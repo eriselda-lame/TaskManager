@@ -14,15 +14,18 @@ import javax.swing.UIManager;
  * @author User
  */
 public class TaskManagerApp {
-     public static void main(String[] args){
-        SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-                } catch (Exception ignored) {
-                }
-                new LoginFrame().setVisible(true);
+     
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(() -> {
+            try {
+                LoginFrame login = new LoginFrame();
+                login.setVisible(true);
+            } catch (IOException ex) {
+                JOptionPane.showMessageDialog(
+                    null,
+                    "Could not start application: "
+                    + ex.getMessage()
+                );
             }
         });
     }

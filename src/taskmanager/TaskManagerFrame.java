@@ -46,9 +46,6 @@ import javax.swing.table.DefaultTableModel;
  * @author User
  */
 public class TaskManagerFrame extends JFrame{
-    public void setVisible(boolean b) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
     private final UserProfile user;
     private final Map<String, List<Task>> allTasks;
     private final List<Task> tasks;

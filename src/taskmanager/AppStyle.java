@@ -25,18 +25,22 @@ public class AppStyle {
     public static final Color PINK_DARK =new Color(177,77,119);
     public static final Color NIGHT =new Color(39,35,47);
     public static final Color NIGHT_PANEL =new Color(54,48,64);
-    public static final String ICON_PATH =
-        "C:\\Users\\User\\OneDrive\\Desktop\\cartoon-illustration-cute-pink-clipboard-completed-to-do-list-check-marks-organization-cartoon-illustration-400035888.webp";
+    public static final String ICON_PATH = "C:\\Users\\User\\OneDrive\\Documents\\NetBeansProjects\\TaskManager\\task.png";;
 
     private AppStyle() {
     }
-    public static Image loadAppIcon(){
-        File file=new File(ICON_PATH);
-        if (file.exists()){
-            return new ImageIcon(ICON_PATH).getImage();
-        }
-        return new ImageIcon().getImage();
+
+public static Image loadAppIcon() {
+    java.io.File file = new java.io.File(ICON_PATH);
+
+    if (file.exists()) {
+        return new ImageIcon(ICON_PATH).getImage();
     }
+
+    System.out.println("Fotoja nuk u gjet: " + ICON_PATH);
+    return null;
+}
+
     public static JButton bubbleButton(String text) {
         JButton button = new JButton(text);
         button.setFont(new Font("SansSerif", Font.BOLD,13));
